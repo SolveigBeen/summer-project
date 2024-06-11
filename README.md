@@ -18,8 +18,8 @@ Systemet är en webbapplikation som skall tillgodose några olika behov ( se use
 
 #### Frontend
 
-Er frontend skall vara byggd med React, Typescript och SCSS, ifall man vill kan man bygga den enligt _monorepo-arkitekturen_.
-
+Er frontend skall vara byggd med React, Typescript och SCSS, ifall man vill kan man bygga den enligt _monorepo-arkitekturen_. Vill man inte så kan man såklart bygga sin frontend i React på det "vanliga" sättet som vi gjort med mappar som `components` och `pages`.
+.
 För att bättre förstå denna arkitektur så finns i detta repo en [boilerplate till projektet](/boilerplate) där några olika packages finns.
 
 #### Backend
