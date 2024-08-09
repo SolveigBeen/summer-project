@@ -1,0 +1,35 @@
+@import '../scss/variables.scss';
+@import '../scss/typography.scss';
+@import '../scss/mixins.scss';
+
+.menu-component {
+  background-color: $coal;
+  width: auto;
+padding:1rem;
+  color:$snow;
+  margin-top: 2rem;
+}
+
+.menu-component__header {
+  color:$snow;
+  display:flex;
+
+}
+.extra-title {
+  @include menu-row;
+}
+
+.extra-btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.extra-btn {
+ background-color: $shade-24-light; 
+ padding: 1rem 2rem ;
+ height: 1rem;
+ text-align: center;
+ 
+
+}
