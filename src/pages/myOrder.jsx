@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './myOrder.scss';
 import Button from '../components/Button';
 import DishItem from '../components/DishItem';
+import { Link } from 'react-router-dom';
 
 const MyOrder = () => {
   const initialCartItems = [
@@ -44,7 +45,10 @@ const MyOrder = () => {
       </section>
 
       <div className="Btn-container">
+      <Link to="/orderDone"  linkadress="/orderDone">
         <Button label="TAKE MY MONEY" variant="coal" />
+     
+        </Link>
       </div>
     </div>
   );

@@ -14,6 +14,7 @@ function App() {
       
       <Routes>
         <Route index path="/" element ={<Menu></Menu>}/>
+        <Route path="/menu" element={<Menu />} /> 
         <Route path="/myOrder" element ={<MyOrder></MyOrder>}/>
         <Route path="/orderDone" element ={<OrderDone></OrderDone>}/>
         <Route path="/receipt" element ={<Receipt></Receipt>}/>

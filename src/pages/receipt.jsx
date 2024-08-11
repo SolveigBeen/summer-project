@@ -2,9 +2,10 @@ import React from 'react'
 import './receipt.scss'
 import Header from '../components/Header'
 import Button from  '../components/Button'
+import {Link} from 'react-router-dom';
 
 
-const receipt = () => {
+const Receipt = () => {
 
   const CartItems = [
     { id: 1, name: 'Karlstad', pricePerItem: 9 , number: 3},
@@ -40,9 +41,11 @@ const receipt = () => {
           <h2> SEK</h2> {/* Display the total sum */}
         </div>
       </section>
+      <Link to="/menu">
       <Button label="Gör en ny beställning" variant="coal" ></Button>
+      </Link>
     </div>
   )
 }
 
-export default receipt
+export default Receipt

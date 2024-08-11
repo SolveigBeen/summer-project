@@ -1,10 +1,10 @@
 import React from 'react';
-import './Menu.scss';
+import './Meny.scss';
 import MenuItem from './MenuItem';
 import menuData from '../../data/menu.json';
 
 
-const Menu = () => {
+const Meny = () => {
   return (
     <div className="menu-component">
       <h2 className="menu-component__header">MENY</h2>
@@ -39,4 +39,4 @@ const Menu = () => {
   )
 }
 
-export default Menu
+export default Meny
