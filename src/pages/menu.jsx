@@ -1,17 +1,17 @@
 import React from 'react'
 import Header from '../components/Header'
-import Menu from '../components/Menu'
+import Meny from '../components/Meny'
 import CartBtn from '../components/CartBtn'
 import './menu.scss'
 
-const menu = () => {
+const Menu = () => {
   return (
     <div className="menuPage">
       <Header></Header>
      <CartBtn></CartBtn>
-      <Menu></Menu>
+      <Meny></Meny>
     </div>
   )
 }
 
-export default menu
+export default Menu
