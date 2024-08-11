@@ -1,0 +1,23 @@
+@import '../scss/variables.scss';
+@import '../scss/typography.scss';
+@import '../scss/mixins.scss';
+
+
+
+.myOrder-container {
+  @include page-layout;
+  background-color:$darkmint ;
+
+}
+
+.section-orderDone {
+  @include flex-center;
+  flex-direction:column;
+  padding:0 2rem;
+  text-align: center;
+}
+
+.boxtop__img {
+  max-width:100%;
+  
+}

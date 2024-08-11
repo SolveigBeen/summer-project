@@ -1,0 +1,55 @@
+@import '../scss/variables.scss';
+@import '../scss/typography.scss';
+@import '../scss/mixins.scss';
+
+
+
+.receipt-container {
+  @include page-layout;
+  background-color:$clay ;
+  color:$snow;
+}
+
+
+.receipt-section{
+  @include flex-column;
+  flex-grow: 1;
+  background-color:$ash ;
+  color:$coal;
+  margin-top: 2rem;
+}
+
+.receipt-section-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.logo-img {
+  width: 3rem;
+  padding:2rem;
+}
+
+.receiptItem{
+  padding:1rem;
+}
+
+.receiptItem-row {
+  @include menu-row;
+  }
+  
+  .DottedLine {
+    border-bottom: 2px dotted $coal; 
+    flex-grow: 1; /* Fill the remaining space */
+    margin: 8px 10px ; /* Adjust spacing as needed */
+    padding:0;
+  }
+
+  .Total-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: $shade-24-dark;
+    padding: 1rem;
+  }

@@ -4,7 +4,9 @@
 h2 {
   font-family: fira sans;
   font-size: 32px;
-  text-align: center;
+  font-weight: bold;
+  margin:0;
+  text-transform: uppercase;
 }
 
 h3 {
@@ -12,6 +14,7 @@ h3 {
   font-size: 22px;
   font-weight: bold;
   margin:0;
+  text-transform: uppercase;
 }
 
 p {
@@ -19,9 +22,8 @@ p {
   font-size: 16px;
   text-align: center;
   }
- .font-black {
-  color:$coal;
- }
+ 
+ 
   .font-small {
     font-size: 14px;
     margin: 0;

@@ -1,5 +1,6 @@
 import React from 'react'
 import './Header.scss';
+import { Link } from 'react-router-dom';
 
 function Logo() {
   return (
@@ -16,9 +17,7 @@ const Header = () => {
   return (
     <div className="Header">
       <Logo></Logo>
-      <div className="cart-btn">
-      <img src="Union.png"  alt="cart" className='cart-btn__img'/>
-      </div>
+
     </div>
   )
 }

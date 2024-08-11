@@ -1,0 +1,34 @@
+@import '../scss/variables.scss';
+@import '../scss/typography.scss';
+@import '../scss/mixins.scss';
+
+.DishItem-container{
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  color:$coal;
+  width:auto;
+  box-sizing: border-box; 
+}
+
+.DishItem {
+  @include menu-row;
+  }
+
+  .DottedLine {
+    border-bottom: 2px dotted $coal; 
+    flex-grow: 1; /* Fill the remaining space */
+    margin: 4px 10px ; /* Adjust spacing as needed */
+    padding:0;
+  }
+
+  .DishItem-summing {
+    @include flex-row;
+ 
+  }
+
+  .DishItem-summing-btn {
+    border:none;
+    background-color: $snow;
+    
+  }

@@ -4,6 +4,26 @@
   align-items: center;
 }
 
+@mixin page-layout {
+padding:1rem;
+display: flex;
+flex-direction: column;
+box-sizing: border-box; 
+width: auto;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
 @mixin menu-row {
   width: 100%;
   display: flex;

@@ -1,0 +1,29 @@
+@import '../scss/variables.scss';
+@import '../scss/typography.scss';
+
+.button {
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 24px;
+  cursor: pointer;
+  border: none;
+  font-family: Fira Sans;
+  text-align: center;
+  margin-top:1rem;
+  text-transform: uppercase;
+
+  &.button-coal {
+    background-color: $coal;
+    color: $snow;
+  }
+
+  &.button-boarder {
+    border: 1px solid $snow;
+    color: $snow;
+  }
+
+  &.button-coal-snow {
+    background-color: $snow;
+    color: $coal;
+  }
+}

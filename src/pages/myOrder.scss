@@ -1,0 +1,33 @@
+@import '../scss/variables.scss';
+@import '../scss/typography.scss';
+@import '../scss/mixins.scss';
+
+.myOrder-container {
+  background-color:$snow;
+  @include page-layout;
+ }
+
+.cart {
+  align-self: flex-end; /* Aligns the cart to the right within the flex container */
+  margin-bottom: 1rem
+}
+
+.cart-btn__img {
+  width:32px;
+  height: 31px;
+}
+
+.myOrder-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.Total-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: $shade-24-dark;
+  padding: 1rem;
+}
