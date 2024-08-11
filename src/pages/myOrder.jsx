@@ -13,9 +13,9 @@ const MyOrder = () => {
 
   const [totalSum, setTotalSum] = useState(0);
 
-  const handleOrderSumChange = (priceChange) => {
-    // Update totalSum based on the priceChange from the DishItem
-    setTotalSum((prevTotal) => prevTotal + priceChange);
+  const handleOrderSumChange = (sumChange) => {
+    setTotalSum(prevTotal => prevTotal + sumChange);
+    
   };
 
   return (
@@ -31,7 +31,7 @@ const MyOrder = () => {
               key={item.id}
               name={item.name}
               pricePerItem={item.pricePerItem}
-              onOrderSumChange={handleOrderSumChange} // Correctly passing the function
+              onSumChange={handleOrderSumChange} // Correctly passing the function
             />
           ))}
         </div>

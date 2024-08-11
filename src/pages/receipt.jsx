@@ -12,6 +12,8 @@ const Receipt = () => {
     { id: 2, name: 'Stockholm', pricePerItem: 9, number: 2 },
     { id: 3, name: 'Göteborg', pricePerItem: 9, number: 1 },
   ];
+
+  const total = CartItems.reduce((acc, item)=> acc +item.pricePerItem * item.number, 0)
   return (
     <div className="receipt-container">
      <Header></Header> 
@@ -35,10 +37,10 @@ const Receipt = () => {
           ))}
       <div className="Total-container">
           <div>
-            <h3>TOTALT</h3>
+            <h3>Totalt</h3>
             <p className='font-small'>inkl 20% moms</p>
           </div>
-          <h2> SEK</h2> {/* Display the total sum */}
+          <h2> {total} SEK</h2> {/* Display the total sum */}
         </div>
       </section>
       <Link to="/menu">

@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './DishItem.scss';
 
 
-function DishItem({ name, pricePerItem, onOrderSumChange }) {
+function DishItem({ name, pricePerItem, onSumChange }) {
   const [value, setValue] = useState(1);
   const [orderSum, setOrderSum] = useState(pricePerItem);
 
-  useEffect(() => {
-    // Initialize the parent total with this item's initial price
-    onOrderSumChange(orderSum);
-  }, []); // Empty dependency array means this runs once when component mounts
+
 
   const handleButtonClick = (increment) => {
     // Update the item count, ensuring it doesn't go below 0
@@ -18,10 +15,11 @@ function DishItem({ name, pricePerItem, onOrderSumChange }) {
 
     // Calculate the new total price for this item
     const newTotalPrice = newValue * pricePerItem;
-    // Send the difference to the parent
-    onOrderSumChange(newTotalPrice - orderSum);
-    // Update local order sum
-    setOrderSum(newTotalPrice);
+const sumChange = newTotalPrice -orderSum;
+
+           setOrderSum(newTotalPrice);
+
+           onSumChange(sumChange)
   };
 
 
