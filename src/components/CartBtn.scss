@@ -1,0 +1,35 @@
+@import '../scss/variables.scss';
+@import '../scss/typography.scss';
+@import '../scss/mixins.scss';
+
+
+
+
+.cart-btn {
+  background-color: $snow;
+  height:64px;
+  width: 64px;
+  @include flex-center;
+  position: absolute; /* Position it relative to the .menuPage container */
+  top: 2rem; 
+  right: 1.5rem; 
+}
+.cart-btn__img {
+  width:32px;
+  height: 31px;
+}
+
+.cart-btn__badge {
+  position: absolute;
+  top: -0.5rem; 
+  right: -0.5rem;
+  background-color: $alert;
+  color: white;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  @include flex-center;
+
+  font-size: 12px;
+}
+

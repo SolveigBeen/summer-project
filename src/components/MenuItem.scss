@@ -4,17 +4,22 @@
 
 .menuItem-container{
  margin-bottom: 1rem;
+ padding: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   color:$snow;
 }
 
+.menuItem-container.added {
+  background-color: $shade-24-light /*  indikera att objektet har lagts till */
+}
+
 .DishItem {
 @include menu-row;
 }
 
-.DottedLine {
+.dottedLine {
   border-bottom: 2px dotted $snow; 
   flex-grow: 1; /* Fill the remaining space */
   margin: 8px 10px ; /* Adjust spacing as needed */

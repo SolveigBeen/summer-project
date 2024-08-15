@@ -8,7 +8,6 @@ import Receipt from './pages/receipt'
 
 function App() {
 
-
   return (
     <BrowserRouter>
       
@@ -21,7 +20,7 @@ function App() {
       </Routes>
     </BrowserRouter>
    
-  )
+  );
 }
 
 export default App

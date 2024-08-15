@@ -1,22 +1,44 @@
-import React, { useState } from 'react';
+import React, { useEffect,useState } from 'react';
+import axios from 'axios';
 import './myOrder.scss';
 import Button from '../components/Button';
 import DishItem from '../components/DishItem';
 import { Link } from 'react-router-dom';
 
-const MyOrder = () => {
-  const initialCartItems = [
-    { id: 1, name: 'Karlstad', pricePerItem: 27 },
-    { id: 2, name: 'Stockholm', pricePerItem: 35 },
-    { id: 3, name: 'Göteborg', pricePerItem: 30 },
-  ];
 
+const MyOrder = () => {
+  const [cartItems, setCartItems] = useState([]);
   const [totalSum, setTotalSum] = useState(0);
 
-  const handleOrderSumChange = (sumChange) => {
-    setTotalSum(prevTotal => prevTotal + sumChange);
-    
+  useEffect(() => {
+    fetchCartItems();
+  }, []);
+
+
+    // Fetch the cart items from the backend
+    const fetchCartItems = () => {
+    axios.get('http://localhost:8000/api/cart')
+      .then(response => {
+        setCartItems(response.data.cartItems);
+        setTotalSum(response.data.totalSum); // Update totalSum
+      })
+      .catch(error => {
+        console.error('Error fetching cart items:', error);
+      });
   };
+
+  const handleQuantityChange = (id, quantity) => {
+    axios.put(`http://localhost:8000/api/cart/update/${id}`, { quantity })
+      .then(response => {
+        setCartItems(response.data.cartItems); // Update cart items
+        setTotalSum(response.data.totalSum); // Update total sum
+      })
+      .catch(error => {
+        console.error('Error updating item:', error);
+      });
+  };
+
+
 
   return (
     <div className='myOrder-container'>
@@ -26,12 +48,15 @@ const MyOrder = () => {
 
       <section className="myOrder-section">
         <div>
-          {initialCartItems.map((item) => (
+          {cartItems.map((item) => (
             <DishItem
-              key={item.id}
-              name={item.name}
-              pricePerItem={item.pricePerItem}
-              onSumChange={handleOrderSumChange} // Correctly passing the function
+            key={item._id}
+            id={item._id} // Pass id for handling updates
+            name={item.name}
+            pricePerItem={item.price}
+            totalPrice={item.totalPrice}
+            quantity={item.quantity}
+            onQuantityChange={handleQuantityChange} // Pass the handler for updates
             />
           ))}
         </div>

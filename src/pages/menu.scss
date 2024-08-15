@@ -7,16 +7,3 @@ background-color: $mint;
 @include page-layout;
 }
 
-.cart-btn {
-  background-color: $snow;
-  height:64px;
-  width: 64px;
-  @include flex-center;
-  position: absolute; /* Position it relative to the .menuPage container */
-  top: 1rem; 
-  right: 1rem; 
-}
-.cart-btn__img {
-  width:32px;
-  height: 31px;
-}

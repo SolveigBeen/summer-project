@@ -1,34 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './DishItem.scss';
 
 
-function DishItem({ name, pricePerItem, onSumChange }) {
-  const [value, setValue] = useState(1);
-  const [orderSum, setOrderSum] = useState(pricePerItem);
 
+function DishItem({ id, name, pricePerItem, totalPrice, quantity, onQuantityChange }) {
+  const [count, setCount] = useState(quantity);
 
+  useEffect(() => {
+    setCount(quantity);
+  }, [quantity]);
 
   const handleButtonClick = (increment) => {
-    // Update the item count, ensuring it doesn't go below 0
-    const newValue = Math.max(0, value + increment);
-    setValue(newValue);
+    const newCount = Math.max(0, count + increment);
+    setCount(newCount);
 
-    // Calculate the new total price for this item
-    const newTotalPrice = newValue * pricePerItem;
-const sumChange = newTotalPrice -orderSum;
-
-           setOrderSum(newTotalPrice);
-
-           onSumChange(sumChange)
+    onQuantityChange(id, newCount); // Notify parent component to update backend and UI
   };
-
 
   return (
     <div className="DishItem-container">
       <div className="DishItem">
         <h3>{name}</h3>
         <div className="DottedLine"></div>
-        <h3>{orderSum} SEK</h3>
+        <h3>{totalPrice} SEK</h3>
       </div>
       <div className="DishItem-summing">
         <button
@@ -37,7 +31,7 @@ const sumChange = newTotalPrice -orderSum;
         >
           <img src="plus-button.png" alt="plus" />
         </button>
-        <p>{value} stycken</p>
+        <p>{count} stycken</p>
         <button
           className="DishItem-summing-btn"
           onClick={() => handleButtonClick(-1)}
